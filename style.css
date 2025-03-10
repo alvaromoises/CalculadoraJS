@@ -1,0 +1,112 @@
+/* Hacer que el fondo de toda la página sea negro */
+body {
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el contenedor */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos para la tarjeta (card) */
+.card {
+    margin: auto;
+    width: 330px;
+    height: 450px;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el contenido de la tarjeta */
+.card__content {
+    background: rgb(5, 6, 45);
+    border-radius: 17px;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo para la pantalla de la calculadora */
+.pantalla {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.display {
+    width: 100%;
+    height: 40px;
+    text-align: right;
+    font-size: 20px;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Estilos para los botones */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.operador {
+    background-color: #AF40FF;
+}
+
+.operador:hover {
+    background-color: #5B42F3;
+}
+
+.borrar {
+    background-color: #e74c3c;
+    grid-column: span 2;
+}
+
+.borrar:hover {
+    background-color: #c0392b;
+}
+
+.igual {
+    background-color: #2ecc71;
+    grid-column: span 2;
+}
+
+.igual:hover {
+    background-color: #27ae60;
+}
