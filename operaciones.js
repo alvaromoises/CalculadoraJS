@@ -56,7 +56,7 @@ function operaciones(evento) {
             pantalla.textContent = resul.toString()
         } else {
             if (pantalla.textContent != '0') {
-                let numero1 = parseInt(pantalla.textContent)
+                let numero1 = pantalla.textContent
                 numeros.push(numero1)
                 numeros.push(operacion.textContent)
                 pantalla.textContent = '0'
@@ -70,13 +70,13 @@ function operaciones(evento) {
 function resultado() {
     try {
         if (numeros.length != 0) {
-            let numero2 = parseInt(pantalla.textContent)
+            let numero2 = pantalla.textContent
             numeros.push(numero2)
             let operador = numeros[1]
             let total = 0
             switch (operador) {
                 case '+':
-                    total = numeros[0] + numeros[2]
+                    total = parseFloat(numeros[0]) + parseFloat(numeros[2])
                     pantalla.textContent = total.toString()
                     break;
                 case '-':
@@ -95,6 +95,20 @@ function resultado() {
                     console.log('No se realizo ninguna operación')
             }
             numeros = []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+function eliminar() {
+    try {
+        if (pantalla.textContent != '0') {
+            let num = pantalla.textContent
+            num = num.slice(0, -1);
+            pantalla.textContent = num;
+        }
+        if (pantalla.textContent == '') {
+            pantalla.textContent = '0'
         }
     } catch (error) {
         console.log(error)
@@ -124,3 +138,4 @@ division.addEventListener('click', operaciones)
 porcentaje.addEventListener('click', operaciones)
 
 igual.addEventListener('click', resultado)
+borrar.addEventListener('click', eliminar)
